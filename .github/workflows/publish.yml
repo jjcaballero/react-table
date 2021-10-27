@@ -18,7 +18,9 @@ jobs:
     - run: |
         cd examples/basic
         yarn
-    - run: yarn run build
+    - run: |
+        cd examples/basic
+        yarn run build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
