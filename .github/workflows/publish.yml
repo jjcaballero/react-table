@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      EXAMPLE: example/basics
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js
@@ -16,18 +18,18 @@ jobs:
       with:
         node-version: '12.x'
     - run: |
-        cd examples/basic
+        cd env.EXAMPLE
         yarn upgrade
         yarn install
         yarn add --dev eslint-config-prettier
     - run: |
-        cd examples/basic
+        cd env.EXAMPLE
         yarn
     - run: |
-        cd examples/basic
+        cd env.EXAMPLE
         yarn run build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: examples/basic/build
+        publish_dir: env.EXAMPLE/build
