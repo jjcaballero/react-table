@@ -17,6 +17,9 @@ jobs:
         node-version: '12.x'
     - run: |
         cd examples/basic
+        yarn upgrade
+    - run: |
+        cd examples/basic
         yarn
     - run: |
         cd examples/basic
