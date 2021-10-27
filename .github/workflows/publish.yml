@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      EXAMPLE: examples/basics
+      EXAMPLE: examples/basic
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js
