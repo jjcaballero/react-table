@@ -10,7 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      EXAMPLE: examples/data-driven-classes-and-styles
+      EXAMPLE: examples/kitchen-sink
+      # EXAMPLE: examples/data-driven-classes-and-styles
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js
