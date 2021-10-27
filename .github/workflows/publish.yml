@@ -19,6 +19,7 @@ jobs:
         cd examples/basic
         yarn upgrade
         yarn install
+        yarn add --dev eslint-config-prettier
     - run: |
         cd examples/basic
         yarn
