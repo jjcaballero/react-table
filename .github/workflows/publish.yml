@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: '12.x'
     - run: |
-        cd ${{ ${{ env.EXAMPLE }} }}
+        cd ${{ env.EXAMPLE }}
         yarn upgrade
         yarn install
         yarn add --dev eslint-config-prettier
