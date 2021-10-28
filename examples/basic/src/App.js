@@ -74,6 +74,13 @@ function Table({ columns, data }) {
   )
 }
 
+/*
+array = $.csv.toArrays(csv, {
+  delimiter: "'",
+  separator: ';', // Sets a custom field separator character
+});
+*/
+
 function App() {
   const columns = React.useMemo(
     () => [
