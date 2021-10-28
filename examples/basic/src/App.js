@@ -4,6 +4,9 @@ import { useTable } from 'react-table'
 
 import makeData from './makeData'
 
+import jsonData from './data.json';
+
+
 const Styles = styled.div`
   padding: 1rem;
 
@@ -74,12 +77,14 @@ function Table({ columns, data }) {
   )
 }
 
-/*
-array = $.csv.toArrays(csv, {
-  delimiter: "'",
-  separator: ';', // Sets a custom field separator character
-});
-*/
+function json2array(json){
+    var result = [];
+    var keys = Object.keys(json);
+    keys.forEach(function(key){
+        result.push(json[key]);
+    });
+    return result;
+}
 
 function App() {
   const columns = React.useMemo(
@@ -123,10 +128,17 @@ function App() {
   )
 
   const data = React.useMemo(() => makeData(20), [])
+  console.log(data);
+
+  var dataFromJson = json2array(jsonData)
+  console.log(dataFromJson);
+
+  const usedData = dataFromJson[0];  // comment to take data from custom json
+  //const usedData = data;           // uncomment to take the original data randomly created on the fly
 
   return (
     <Styles>
-      <Table columns={columns} data={data} />
+      <Table columns={columns} data={usedData} />
     </Styles>
   )
 }

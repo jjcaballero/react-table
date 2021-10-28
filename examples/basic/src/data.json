@@ -1,0 +1,19 @@
+{
+    "results": [
+    {
+      "firstName": "Juan",
+      "lastName": "Caballero",
+      "age": "38",
+      "visits": "3",
+      "status": "Married",
+      "progress": 100
+    },
+    {
+        "firstName": "Blas",
+        "lastName": "Perez",
+        "age": "65",
+        "visits": "27",
+        "status": "Single",
+        "progress": 50
+    }
+]}
