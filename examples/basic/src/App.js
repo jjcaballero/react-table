@@ -131,9 +131,24 @@ function App() {
                 .local()
                 .format("DD-MM-YYYY hh:mm a")
             }
+          },
+          {
+            Header: "Runtime",
+            accessor: "runtime",
+            // Cell method will provide the value of the cell; we can create a custom element for the Cell
+            Cell: ({ cell: { value } }) => {
+              const hour = Math.floor(value / 60);
+              const min = Math.floor(value % 60);
+              return (
+                <>
+                  {hour > 0 ? `${hour} hr${hour > 1 ? "s" : ""} ` : ""}
+                  {min > 0 ? `${min} min${min > 1 ? "s" : ""}` : ""}
+                </>
+              );
+            }
           }
-        ],
-      },
+        ]
+      }
     ],
     []
   )

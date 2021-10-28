@@ -7,7 +7,8 @@
       "visits": "3",
       "status": "Married",
       "progress": 100,
-      "born":"2014-09-08T08:02:17-05:00"
+      "born":"2014-09-08T08:02:17-05:00",
+      "runtime": "187"
     },
     {
         "firstName": "Blas",
@@ -16,6 +17,7 @@
         "visits": "27",
         "status": "Single",
         "progress": 50,
-        "born":"1990-01-01"
+        "born":"1990-01-01",
+        "runtime": "32"
     }
 ]}
