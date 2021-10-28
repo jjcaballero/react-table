@@ -6,6 +6,8 @@ import makeData from './makeData'
 
 import jsonData from './data.json';
 
+import moment from 'moment';
+
 
 const Styles = styled.div`
   padding: 1rem;
@@ -121,6 +123,15 @@ function App() {
             Header: 'Profile Progress',
             accessor: 'progress',
           },
+          {
+            id: 'born',
+            Header: 'Born',
+            accessor: row => {
+              return moment(row.born)
+                .local()
+                .format("DD-MM-YYYY hh:mm a")
+            }
+          }
         ],
       },
     ],

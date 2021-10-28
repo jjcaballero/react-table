@@ -2,11 +2,12 @@
     "results": [
     {
       "firstName": "Juan",
-      "lastName": "Caballero",
+      "lastName": "Antonio",
       "age": "38",
       "visits": "3",
       "status": "Married",
-      "progress": 100
+      "progress": 100,
+      "born":"2014-09-08T08:02:17-05:00"
     },
     {
         "firstName": "Blas",
@@ -14,6 +15,7 @@
         "age": "65",
         "visits": "27",
         "status": "Single",
-        "progress": 50
+        "progress": 50,
+        "born":"1990-01-01"
     }
 ]}
