@@ -88,6 +88,20 @@ function json2array(json){
     return result;
 }
 
+// Custom component to render tag
+const Tags = ({ value }) => {
+  // Create a badge-like component instead of a comma-separated string
+  return (
+    // <p>
+    //   {value}
+    // </p>
+    <span className="badge">
+       {value}
+    </span>
+  );
+};
+
+
 function App() {
   const columns = React.useMemo(
     () => [
@@ -145,6 +159,23 @@ function App() {
                   {min > 0 ? `${min} min${min > 1 ? "s" : ""}` : ""}
                 </>
               );
+            },
+          },
+          {
+              Header: "Tag(s)",
+              accessor: "tags",
+              // Cell method will provide the cell value; we pass it to render a custom component
+              Cell: ({ cell: { value } }) => <Tags value={value} />
+          },
+          {
+            Header: 'Url',
+            accessor: 'url',
+            //Cell: ({ cell: { value }, row: { original } }) => <Link to={`users/${original.id}`}>{value}</Link>
+
+            Cell: ({ cell: { value } }) => {
+              return (
+                <a href={value}> link </a>
+              );
             }
           }
         ]
@@ -154,10 +185,10 @@ function App() {
   )
 
   const data = React.useMemo(() => makeData(20), [])
-  console.log(data);
+  // console.log(data);
 
-  var dataFromJson = json2array(jsonData)
-  console.log(dataFromJson);
+  var dataFromJson = json2array(jsonData || data);
+  //console.log(dataFromJson);
 
   const usedData = dataFromJson[0];  // comment to take data from custom json
   //const usedData = data;           // uncomment to take the original data randomly created on the fly
