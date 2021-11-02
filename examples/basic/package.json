@@ -5,9 +5,11 @@
     "start": "rescripts start",
     "build": "rescripts build",
     "test": "rescripts test",
-    "eject": "rescripts eject"
+    "eject": "rescripts eject",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "moment": "^2.29.1",
     "namor": "^1.1.2",
     "react": "^16.8.6",
